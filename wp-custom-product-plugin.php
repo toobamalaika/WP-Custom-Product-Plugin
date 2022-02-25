@@ -12,3 +12,10 @@
 * Author URI: https://codup.co/
 */
 defined('ABSPATH') || die ("You can't access this directory!");
+
+require_once 'constant.php';
+
+require_once(plugin_dir_path(__FILE__) . 'includes/product-listings-scripts.php');
+require_once(plugin_dir_path(__FILE__) . 'includes/product-listings-cpt.php');
+require_once(plugin_dir_path(__FILE__) . 'includes/product-listings-fields.php');
+require_once(plugin_dir_path(__FILE__) . 'includes/product-listings-shortcodes.php');
