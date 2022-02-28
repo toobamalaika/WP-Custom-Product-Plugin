@@ -89,7 +89,6 @@ function wcpp_product_post() {
 			'rewrite' => $rewrite,
 			'public' => true,
 		);
-	
 		register_taxonomy($taxonomy['slug'], $taxonomy['post_type'], $labels_taxonomy);
 	}
 }

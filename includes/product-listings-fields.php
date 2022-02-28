@@ -4,7 +4,7 @@ add_action('admin_init', 'wcpp_add_metabox');
 
 function wcpp_add_metabox() {
 
-	add_meta_box('product_metabox', 'Product Other Field', 'wcpp_product_metabox', ['products', 'page']);
+	add_meta_box('product_metabox', 'Product Other Field', 'wcpp_product_metabox', ['products']);
 }
 
 function wcpp_product_metabox($post) { 
