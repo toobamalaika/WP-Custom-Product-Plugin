@@ -45,7 +45,10 @@ function wcpp_shop_page_shortcode($atts, $content = '') {
   									<button class="btn btn-link filter-button active w-100 text-left" data-filter="all">All</button>';
   								foreach($categories as $category) {									$content .= '<button class="btn btn-link filter-button active w-100 text-left" data-filter="' . ($category->slug). '">'.$category->name.'</button>';
 								}
-  								$content .= '</ul>
+								// $get_prices = get_post_meta();
+  								$content .= '<select class="form-control filter-select" id="filter-select">
+  															<option selected >Select Price</option>
+  															</select></ul>
 							</div>
 						</div>';
 
@@ -60,8 +63,10 @@ function wcpp_shop_page_shortcode($atts, $content = '') {
 									foreach($termsArray as $term) {
 										$termsSlug .= $term->slug." ";
 									}
+
+									// echo "<pre>"; print_r($metapriceArray); die();
 									$content .= '<div class="col-md-6">
-													<div class="product filter '.$termsSlug.'">
+													<div class="product filter '.$termsSlug.get_post_meta( get_the_ID(), '_price', true ).'">
 													    <div class="image-box">
 													      	<img class="images" src="'.$image[0].'"/>
 													    </div>
